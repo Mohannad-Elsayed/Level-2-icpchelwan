@@ -40,3 +40,6 @@ s.erase(s.find(1)) // remove a value after searching fot it
 - Maps support random access
 - keys can't be changed or modified
 - map.count()  //  to see if the key is in the map or not either 0 or 1
+### Binary search
+- search for a particular value in a sorted, distinct array
+- 
