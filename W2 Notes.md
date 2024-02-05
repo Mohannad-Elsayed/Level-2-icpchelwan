@@ -17,6 +17,9 @@ Binary search tree
 s.insert(1) // insert (1) to the set
 s.insert(begin(), end())  // insert a range of the iterator 
 
+### cin a set:
+
+
 ### erase: 
 s.erase(1) // erase an element with its value
 s.erase(it) // erase the value by it's iterator
@@ -26,3 +29,13 @@ s.erase(s.find(1)) // remove a value after searching fot it
 
 - find returns end() when not found
 - count() returns nuber of occuring, 0 if not found
+
+### multiset 
+- same as set but allow duplicates
+### map
+- same as array but the index is anything not jsut a number
+- same as dictionary in python
+- has key and value
+- same as set, sorted, no dublicates
+- Maps support random access
+- keys can't be changed or modified
