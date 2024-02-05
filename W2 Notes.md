@@ -39,5 +39,4 @@ s.erase(s.find(1)) // remove a value after searching fot it
 - same as set, sorted, no dublicates
 - Maps support random access
 - keys can't be changed or modified
-- map.find()  //  to see if the key is in the map or not
-- 
+- map.count()  //  to see if the key is in the map or not either 0 or 1
