@@ -23,10 +23,15 @@ int main() {
 	}
 	// printing sell orders
 	int cntprint = 0;
+	stack<pair<int, int>> stk;
 	for (auto [i,j] : sell){ 
-		cout << 'S' << ' ' << i << ' ' << j << '\n';
+		stk.push(make_pair(i, j));
 		cntprint++;
 		if (cntprint == prints) break;
+	}
+	while(cntprint--){
+		cout << 'S' << ' ' << stk.top().first << ' ' << stk.top().second << '\n';
+		stk.pop();
 	}
 	cntprint = 0;
 	for (auto it = buy.rbegin(); it != buy.rend(); ++it){
