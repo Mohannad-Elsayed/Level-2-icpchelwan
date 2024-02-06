@@ -5,29 +5,56 @@ int main() {
 		ios::sync_with_stdio(0);
 		cin.tie(0);
 		
-	int n, x; cin >> n >> x;
-	int arr[n]; multiset<int> stt;
-	for (int i = 0; i<n; ++i){
+	long long n, x; cin >> n >> x;
+	if (n == 1 || x == 1){
+		cout << "IMPOSSIBLE";
+		return 0;
+	}
+	long long arr[n]; multiset<long long> mst;
+	for (long long i = 0; i<n; ++i){
 		cin >> arr[i];
-		stt.insert(arr[i]);
+		mst.insert(arr[i]);
 	}
-	int ans = -1, indx1 = -1, indx2 = -1;
-	for (int i = 0; i<n; ++i){
-		int num = arr[i];
-		// if (x - num == num) continue;
-		if(stt.count(x-num)){
-			// cout << "count " << stt.count(x-num) << endl;
-			ans = x-num;
-			indx1 = i+1;
-			break;
+	// for (long long x : mst) cout << x << ' ';
+	long long indx1 = -1, indx2 = -1, ans = -1;
+	for (long long i = 0; i<n; ++i){
+		if (arr[i] < x){
+			if (arr[i] == x-arr[i]){
+				if(mst.count(x-arr[i]) > 1){
+					indx1 = i+1;
+					ans = x-arr[i];
+					break;
+				}
+			}
+			else{
+				long long operand2 = x-arr[i];
+				auto it = mst.find(operand2);
+				if(it != mst.end()){
+					ans = *it;
+					indx1 = i+1;
+					break;
+				}
+			}
+			
 		}
 	}
-	if (ans < 0 || (ans == x/2 && stt.count(ans) == 1)) cout << "IMPOSSIBLE";
+	if (ans < 0) cout << "IMPOSSIBLE";
 	else{
-		for (int i = 0; i<n; ++i){
-			if (arr[i] == ans && indx1 != i+1){ indx2 = i+1; break;}
+		cout << indx1 << ' ';
+		for (long long i = 0; i<n; ++i){
+			if (ans == x/2){
+				if (arr[i] == ans && indx1 != i+1){
+					cout << i+1;
+					break;
+				}
+			}
+			else{
+				if (arr[i] == ans){
+					cout << i+1;
+					break;
+				}
+			}
 		}
-		cout << indx1 << ' ' << indx2;
 	}
 	return 0;
 }
