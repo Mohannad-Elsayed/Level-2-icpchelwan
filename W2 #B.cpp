@@ -17,12 +17,22 @@ int main() {
 	}
 	
 	for (auto num : v){
-		if (num-k > *ste.rbegin()) continue;
-		auto it = ste.lower_bound(num-k);
+		auto it = ste.lower_bound(num);
 		// cout << *it << ' ' << num-k << endl;
-		if (*it != num-k && *it > num+k) continue;
-		++cnt;
-		ste.erase(it);
+		if (it == ste.end() || (*it < num && *it > num+k)){
+			it = ste.lower_bound(num-k);
+			if (it == ste.end() || (*it < num-k && *it > num) ) continue;
+			else{
+				++cnt;
+		 		// cout << *it << ' ' << num << " here\n";
+				ste.erase(it);
+			}
+		}
+		else if (it != ste.end() && (*it >= num && *it <= num+k)){
+			++cnt;
+			// cout << *it << ' ' << num << " her2e\n";
+			ste.erase(it);
+		}
 	}
 	cout << cnt;
 	return 0;
