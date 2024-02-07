@@ -96,17 +96,17 @@
 - [```Tut```](https://codeforces.com/blog/entry/67484)
 - [```Sol```](https://github.com/soumik9876/Codeforces-solutions/blob/master/codeforces%201175%20B.%20Catch%20Overflow!.cpp)
 
-  # Q - Airport:
+# Q - Airport:
 - [```OG```](https://codeforces.com/problemset/problem/218/B)
 - [```Tut```](https://codeforces.com/blog/entry/5285)
 - [```Sol```](https://github.com/fuwutu/CodeForces/blob/master/218B%20-%20Airport.cpp)
 
-  # R - Restoring Password:
+# R - Restoring Password:
 - [```OG```](https://codeforces.com/problemset/problem/94/A)
 - [```Tut```](https://codeforces.com/blog/entry/2208)
 - [```Sol```](https://github.com/fuwutu/CodeForces/blob/master/94A%20-%20Restoring%20Password.cpp)
 
-  # S - Kuriyama Mirai's Stones:
+# S - Kuriyama Mirai's Stones:
 - [```OG```](https://codeforces.com/problemset/problem/433/B)
 - [```Tut```](https://codeforces.com/blog/entry/12397)
 - [```Sol```](https://github.com/mohandsakr/my-problem-solving-solutions-on-codeforces.com/blob/master/433B.%20Kuriyama%20Mirai%27s%20Stones.cpp)
@@ -123,7 +123,7 @@
     - [youtube](https://www.youtube.com/watch?v=S0nKXwwWG8Y)
     - [github](https://github.com/kantuni/Codeforces/blob/master/816B/karen-and-coffee.cpp)
   
- # V - The Festive Evening:
+# V - The Festive Evening:
 - [```OG```](https://codeforces.com/problemset/problem/834/B)
 - [```Tut```](https://codeforces.com/blog/entry/53567)
 - [```Sol```](https://github.com/Raman077/Codeforces/blob/master/834B%20-%20The%20Festive%20Evening.cpp)
@@ -135,7 +135,7 @@
     -[github](https://github.com/AdarshSantoria/CPCodes/blob/main/Codeforces/Flower%20City%20Fence.cpp)
     - [youtube](https://www.youtube.com/watch?v=P1f1JOjG3JU)
 
-  # X - Street Parade:
+# X - Street Parade:
 - [```OG```](https://www.spoj.com/problems/STPAR/en/)
 - ```Sol```:
     - [youtube](https://www.youtube.com/watch?v=FLLExww2fYs)
