@@ -7,19 +7,38 @@ int main() {
 		
 	ll tn, n, tmp, sum = 0, mx = LLONG_MIN; 
 	cin >> n; tn = n;
-	vector<ll> input, pfx;
-	while(tn--){
+	vector<pair<ll, ll>> pfx; vector<ll> input;
+	for(int i = 1; i<=n; ++i){
 		cin >> tmp; input.push_back(tmp);
-		sum += tmp; pfx.push_back(sum);
+		sum += tmp; pfx.push_back(make_pair(sum, i));
 		mx = max({mx, sum, tmp});
 	}
-	auto min_iterator = min_element(pfx.begin(), pfx.end());
-	if (*min_iterator == *pfx.rbegin()){
-		cout << mx; 
-		return 0;
+	sort(pfx.begin(), pfx.end());
+	
+	
+	// cout << "Pfx: ";
+	// for (auto x : pfx) cout << x.first << ' '; cout << endl;
+	
+	
+	
+	auto fixd = pfx.rbegin();
+	for (auto it = pfx.begin(); it != pfx.end()-1; ++it){
+		if ((it -> second) < (fixd -> second)){
+			ll val = fixd -> first - it -> first;
+			mx = max(mx, val);
+			break;
+		}
 	}
-	auto max_iterator = max_element(min_iterator+1, pfx.end());
-	ll val = *max_iterator - *min_iterator;
-	val > mx ? cout << val : cout << mx;
+	
+	auto fixd2 = pfx.begin();
+	for (auto it = pfx.rbegin(); it != pfx.rend()+1; ++it){
+		if ((it -> second) > (fixd -> second)){
+			ll val = (it -> first) - (fixd -> first);
+			mx = max(mx, val);
+			break;
+		}
+	}
+	
+	cout << mx;
 	return 0;
 }
