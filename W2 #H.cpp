@@ -4,41 +4,28 @@ using namespace std;
 int main() {
 		ios::sync_with_stdio(0);
 		cin.tie(0);
-		
-	ll tn, n, tmp, sum = 0, mx = LLONG_MIN; 
-	cin >> n; tn = n;
-	vector<pair<ll, ll>> pfx; vector<ll> input;
-	for(int i = 1; i<=n; ++i){
-		cin >> tmp; input.push_back(tmp);
-		sum += tmp; pfx.push_back(make_pair(sum, i));
+
+	ll n, tmp, sum = 0, mx = LLONG_MIN; cin >> n;
+	
+	vector<ll> pfx;
+	for (int i=0; i<n; ++i){
+		cin >> tmp;
+		sum += tmp;
+		pfx.push_back(sum);
 		mx = max({mx, sum, tmp});
+		// cout << mx << 'm';
 	}
-	sort(pfx.begin(), pfx.end());
-	
-	
-	// cout << "Pfx: ";
-	// for (auto x : pfx) cout << x.first << ' '; cout << endl;
-	
-	
-	
-	auto fixd = pfx.rbegin();
-	for (auto it = pfx.begin(); it != pfx.end()-1; ++it){
-		if ((it -> second) < (fixd -> second)){
-			ll val = fixd -> first - it -> first;
-			mx = max(mx, val);
-			break;
-		}
+	if (pfx.size() == 1){
+		cout << tmp;
+		return 0;
 	}
-	
-	auto fixd2 = pfx.begin();
-	for (auto it = pfx.rbegin(); it != pfx.rend()+1; ++it){
-		if ((it -> second) > (fixd -> second)){
-			ll val = (it -> first) - (fixd -> first);
-			mx = max(mx, val);
-			break;
-		}
+	// for (ll x : pfx) cout << x << ' '; cout << endl;
+	ll mn = *pfx.begin();
+	for (int i = 1; i<n; ++i){
+		ll x = pfx[i];
+		mx = max(mx, x - mn);
+		mn = min(mn, x);
 	}
-	
 	cout << mx;
 	return 0;
 }
