@@ -12,13 +12,13 @@ int main() {
 		cin.tie(0);
 	
 	map<string, string> oldnew, newold;
-	int n; cin >> n;
+	int n, i = 0; cin >> n;
 	while(n--){
 		string old, neew; 
 		cin >> old >> neew;
-		if (newold.find(old) != newold.end()){
+		if (newold.count(old)){
 			oldnew[newold[old]] = neew;
-			newold[neew] = old;
+			newold[neew] = newold[old];
 		}
 		else{
 			oldnew[old] = neew;
