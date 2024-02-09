@@ -1,10 +1,12 @@
-# pair: 
+# pair
+
 2 variables conncetive to each other 
 first and second  
 pair<strin, int> = {"moha", 3};
 comparing pairs = first with first, if both first equal, compare seconds, if equal, doesn't matter
 
-# set:
+# set
+
 always ascending sortied, no duplicates
 insert, remove, search  ```O(log n)```
 Binary search tree
