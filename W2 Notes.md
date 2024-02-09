@@ -41,9 +41,9 @@ Binary search tree
 
  ```upper_bound```
 - return an iterator to the next upper element, if it's bigger than the biggest element, return set::end()
-### multiset 
+# multiset 
 - same as set but allow duplicates
-### map
+# map
 - same as array but the index is anything not jsut a number
 - same as dictionary in python
 - has key and value
@@ -52,7 +52,7 @@ Binary search tree
 - keys can't be changed or modified
 - ```map.count()```  //  to see if the key is in the map or not either 0 or 1
   
-### Binary search
+# Binary search
 - search for a particular value in a sorted, distinct array
 - search for a particular value
 - search for a range, use l or r only
