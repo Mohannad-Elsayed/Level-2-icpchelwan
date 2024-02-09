@@ -17,6 +17,7 @@ Binary search tree
       
 ### insertion: 
 ```s.insert(1)``` // insert ```1``` to the set
+
 ```s.insert(begin(), end())```  // insert a range of the iterator 
 
 ### cin a set:
@@ -25,7 +26,9 @@ Binary search tree
 
 ### erase: 
 ```s.erase(1)``` // erase an element with its value
+
 ```s.erase(it)``` // erase the value by it's iterator
+
 ```s.erase(s.find(1))``` // remove a value after searching fot it
 
 - ```set<int, greater<int>>```  for sorting the set greater
@@ -35,6 +38,7 @@ Binary search tree
 
  ```lower_bound```
 - return an iterator to the element, if not found return the next bigger, if the next big is not found (the input is bigger than the biggest element), returns set::end()
+
  ```upper_bound```
 - return an iterator to the next upper element, if it's bigger than the biggest element, return set::end()
 ### multiset 
@@ -47,6 +51,7 @@ Binary search tree
 - Maps support random access
 - keys can't be changed or modified
 - ```map.count()```  //  to see if the key is in the map or not either 0 or 1
+  
 ### Binary search
 - search for a particular value in a sorted, distinct array
 - search for a particular value
