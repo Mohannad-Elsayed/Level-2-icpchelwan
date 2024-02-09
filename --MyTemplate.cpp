@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 // #define int long long int
-#define FOR(i,a,b) for (int i=(int)(a);i<(int)(b);i++)
-#define ROF(i,a,b) for (int i=(int)(a);i>(int)(b);i--)
+#define forn(i,a,b) for (int i=(int)(a);i<(int)(b);i++)
+#define rofn(i,a,b) for (int i=(int)(a);i>(int)(b);i--)
 #define all(x) (x).begin(),(x).end()
 #define ys cout << "YES";
 #define ns cout << "NO";
