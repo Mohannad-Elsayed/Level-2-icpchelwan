@@ -132,7 +132,7 @@
 - [```OG```](https://codeforces.com/problemset/problem/1862/C)
 - [```Tut```](https://codeforces.com/blog/entry/119715)
 - ```Sol```:
-    -[github](https://github.com/AdarshSantoria/CPCodes/blob/main/Codeforces/Flower%20City%20Fence.cpp)
+    - [github](https://github.com/AdarshSantoria/CPCodes/blob/main/Codeforces/Flower%20City%20Fence.cpp)
     - [youtube](https://www.youtube.com/watch?v=P1f1JOjG3JU)
 
 # X - Street Parade:
