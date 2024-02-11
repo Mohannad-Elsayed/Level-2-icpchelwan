@@ -1,9 +1,9 @@
-// Problem: L - Towers
+// Problem: I - Collecting Numbers
 // Contest: Virtual Judge - Week #2
-// URL: https://vjudge.net/contest/608666#problem/L
+// URL: https://vjudge.net/contest/608666#problem/I
 // Memory Limit: 512 MB
 // Time Limit: 1000 ms
-// By: Sakura Yamauchi
+// Author: Sakura
 // 
 // Powered by CP Editor (https://cpeditor.org)
 
@@ -22,8 +22,22 @@ using namespace std;
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-    
-  
+    int n, cnt = 1, tmp, mn, mx; cin >> n >> mn; mx = mn;
+    forn(i, 1, n){
+    	cin >> tmp;
+    	    		// cout << "tmp " << tmp << " , " << mn << ' ' << mx << endl;
+    	    		// cout << "       cnt:  " << cnt << '\n';
+    	if (tmp < mn){
+    		++cnt;
+    		mn = tmp;
+    	}
+    	else if (tmp - mx > 1){
+
+    		++cnt;
+    	}
+    	mx = max(tmp, mx);
+    }
+  	cout << cnt;
     // !Stop Here! */
     return 0;
 }
