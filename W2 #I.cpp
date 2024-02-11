@@ -3,7 +3,7 @@
 // URL: https://vjudge.net/contest/608666#problem/I
 // Memory Limit: 512 MB
 // Time Limit: 1000 ms
-// Author: Sakura
+// By: Sakura Yamauchi
 // 
 // Powered by CP Editor (https://cpeditor.org)
 
@@ -22,22 +22,19 @@ using namespace std;
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-    int n, cnt = 1, tmp, mn, mx; cin >> n >> mn; mx = mn;
-    forn(i, 1, n){
+    int n, tmp, cnt = 0; cin >> n;
+    vector<pair<int, int>> vp;
+    forn(i, 0, n){
     	cin >> tmp;
-    	    		// cout << "tmp " << tmp << " , " << mn << ' ' << mx << endl;
-    	    		// cout << "       cnt:  " << cnt << '\n';
-    	if (tmp < mn){
-    		++cnt;
-    		mn = tmp;
-    	}
-    	else if (tmp - mx > 1){
-
-    		++cnt;
-    	}
-    	mx = max(tmp, mx);
+    	vp.push_back(make_pair(tmp, i));
     }
-  	cout << cnt;
+    sort(all(vp));
+    // for (auto [i, j] : vp) cout << i << ' ' << j << endl;
+    forn(i, 1, n){
+    	int indxS = vp.at(i-1).second, indxB = vp.at(i).second;
+    	if (indxS > indxB) ++cnt;
+    }
+  	cout << cnt+1;
     // !Stop Here! */
     return 0;
 }
