@@ -23,18 +23,18 @@ int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
     int n, tmp, cnt = 0; cin >> n;
-    vector<pair<int, int>> vp;
-    forn(i, 0, n){
+    multiset<int> ste;
+    while(n--){
     	cin >> tmp;
-    	vp.push_back(make_pair(tmp, i));
+    	auto it = ste.upper_bound(tmp);
+    	if (it == ste.end()){ ste.insert(tmp); ++cnt;}
+    	else{
+    		ste.erase(it);
+    		ste.insert(tmp);
+    	}
+    	
     }
-    sort(all(vp));
-    // for (auto [i, j] : vp) cout << i << ' ' << j << endl;
-    forn(i, 1, n){
-    	int indxS = vp.at(i-1).second, indxB = vp.at(i).second;
-    	if (indxS < indxB) ++cnt;
-    }
-  	cout << cnt+1;
+    cout << cnt;
     // !Stop Here! */
     return 0;
 }
