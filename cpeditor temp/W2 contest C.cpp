@@ -1,3 +1,12 @@
+// Problem: C - Songs Compression
+// Contest: Virtual Judge - Contest #2
+// URL: https://vjudge.net/contest/609127#problem/C
+// Memory Limit: 256 MB
+// Time Limit: 1000 ms
+// By: Sakura Yamauchi
+// 
+// Powered by CP Editor (https://cpeditor.org)
+
 #include<bits/stdc++.h>
 using namespace std;
 // #define int long long int
@@ -15,8 +24,25 @@ using namespace std;
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
+    ll n, m, suma = 0, tn, sumb = 0; cin >> n >> m; tn = n;
+    multiset<ll> mste;
+    while(tn--){
+    	ll a, b; cin >> a >> b;
+    	suma += a; sumb += b;
+    	mste.insert((a-b));
+    }
     
-    
+    // cout << suma << ' ' << sumb;
+    if (sumb > m) { cout << -1; return 0; }
+    else if (suma <= m) { cout << 0; return 0;}
+    auto it = mste.rbegin();
+    ll i;
+    for (i = 1; i<=n; ++i){
+    	suma -= *it;
+    	if (suma <= m) break;
+    	++it;
+    }
+    cout << i;
     // !Stop Here! */
     return 0;
 }

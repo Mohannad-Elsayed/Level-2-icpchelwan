@@ -1,3 +1,12 @@
+// Problem: D - Gotta Solve `Em All
+// Contest: Virtual Judge - Contest #2
+// URL: https://vjudge.net/contest/609127#problem/D
+// Memory Limit: 256 MB
+// Time Limit: 1000 ms
+// By: Sakura Yamauchi
+// 
+// Powered by CP Editor (https://cpeditor.org)
+
 #include<bits/stdc++.h>
 using namespace std;
 // #define int long long int
@@ -15,8 +24,8 @@ using namespace std;
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-    
-    
+    int o, g; cin >> o  >> g;
+  	
     // !Stop Here! */
     return 0;
 }
