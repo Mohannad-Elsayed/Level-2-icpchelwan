@@ -6,6 +6,8 @@ using namespace std;
 #define all(x) (x).begin(),(x).end()
 #define ys cout << "YES";
 #define ns cout << "NO";
+#define F first
+#define S second
 #define ll long long
 #define ld long double
 #define llu long long unsigned
