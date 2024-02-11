@@ -1,3 +1,12 @@
+// Problem: M - Traffic Lights
+// Contest: Virtual Judge - Week #2
+// URL: https://vjudge.net/contest/608666#problem/M
+// Memory Limit: 512 MB
+// Time Limit: 1000 ms
+// By: Sakura Yamauchi
+// 
+// Powered by CP Editor (https://cpeditor.org)
+
 #include<bits/stdc++.h>
 using namespace std;
 // #define int long long int
@@ -15,7 +24,15 @@ using namespace std;
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-    
+    int n, q, tmp; cin >> n;
+    map<int, int> mp {0, n};
+    multiset<int> mste;
+    cin >> q;
+    while(q--){
+    	cin >> tmp;
+    	auto it = mp.lower_bound(tmp); --it;
+    	cout << (*it).F
+    }
   
     // !Stop Here! */
     return 0;
