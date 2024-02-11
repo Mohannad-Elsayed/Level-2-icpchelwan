@@ -31,11 +31,10 @@ int tests(); int solve(){
     	cin >> tmp;
     	if (!mp.count(tmp)) mp[tmp] = i; // handle first occurance
     	else{
-    		mx = max(i-start, mx);
-    		start = mp[tmp]; // move the starting position
+    		start = max(mp[tmp], start); // move the starting position
     		mp[tmp] = i; // update the dublicate's index
     	}
-    	
+    	// cout << i << ' ' << start << ' ' << "dis: " <<  i-start << ' ' << tmp << endl;
     	mx = max(i-start, mx);
     	// cout << mx << endl;
     }
