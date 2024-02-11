@@ -24,8 +24,21 @@ using namespace std;
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-    int o, g; cin >> o  >> g;
+    int o, g, tmp; cin >> o  >> g;
+  	set<int> ou, go, all;
+  	forn(i, 0, o) {cin >> tmp; ou.insert(tmp); all.insert(tmp);}
+  	forn(i, 0, g) {cin >> tmp; go.insert(tmp); all.insert(tmp);}  	
+  	for (auto x : all){
+  		if (ou.count(x) && go.count(x)){
+			ou.erase(x);
+			go.erase(x);
+		}
+  	}
+  	// for (auto x : ou) cout  << x <<' ';cout << endl;
+  	// for (auto x : go) cout  << x <<' ';cout << endl;
   	
+  	int res = min(ou.size(), go.size());
+  	cout << res;
     // !Stop Here! */
     return 0;
 }
