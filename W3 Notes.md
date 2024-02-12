@@ -27,6 +27,7 @@
 - searching for the sum of two numbers in a sorted array
 - fixed sliding window in O(N)
 - not fixed sliding window in O(N) 
+[`solve`](https://codeforces.com/contest/701/problem/C)
 
 
 
