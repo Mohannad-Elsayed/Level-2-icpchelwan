@@ -19,9 +19,14 @@
   - preserve the answer and search for a better one
 - [Cow Problem](https://codeforces.com/group/c3FDl9EUi9/contest/264941/problem/B)
 
-# Getting the sqrt of a number using binary search:
+### Getting the sqrt of a number using binary search:
 - start = 0, end = number
 - search for a number that satisfies this condition ```(mid * mid) - n <= acc``` where ```acc``` is the accuracy desired. May be `1e-3` for instance.
+
+# Two Pointers:
+- searching for the sum of two numbers in a sorted array
+- fixed sliding window in O(N)
+- not fixed sliding window in O(N) 
 
 
 
