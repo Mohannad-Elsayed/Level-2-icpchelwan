@@ -21,7 +21,7 @@
 
 # Getting the sqrt of a number using binary search:
 - start = 0, end = number
-- search for a number that satisfies this condition ```(mid * mid) - n <= acc``` where ```acc``` is the accuracy desired.
+- search for a number that satisfies this condition ```(mid * mid) - n <= acc``` where ```acc``` is the accuracy desired. May be `1e-3` for instance.
 
 
 
