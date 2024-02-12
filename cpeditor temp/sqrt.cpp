@@ -16,8 +16,8 @@ int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
     int n; cin >> n;
-    double start = 0, end = n, md = 9, w = 1e-8; 
-    while(start - end >= 1e-11){
+    double start = 0, end = n, md = 9, w = 1e-7; 
+    while(fabs(start - end) >= 1e-4){
     	md = (end+start)/2.0;
     	if (fabs(md*md - n) <= w){
     		cout << fixed << setprecision(20) << md; 
