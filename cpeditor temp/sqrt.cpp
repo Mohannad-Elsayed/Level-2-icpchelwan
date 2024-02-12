@@ -17,10 +17,10 @@ int tests(); int solve(){
     // !Start Here! */
     int n; cin >> n;
     double start = 0, end = n, md = 9, w = 1e-8; 
-    while(fabs(start - end) >= w){
+    while(start - end >= 1e-11){
     	md = (end+start)/2.0;
     	if (fabs(md*md - n) <= w){
-    		cout << fixed << setprecision(15) << md; 
+    		cout << fixed << setprecision(20) << md; 
     		break;
     	}
     	if ((md*md) < n){
