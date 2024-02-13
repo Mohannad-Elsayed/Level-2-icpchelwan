@@ -4,7 +4,7 @@
 - compare function similar to bubble sort, return true to swap 2 elements, false if not swap
 - use anonymous function instead of writitng a seperate function to sort ```[= &](parameters) -> return type{function logic}```
 # Binary search:
-- target = 5
+- target = 3
 - lower_bound() :
   - to find the first occurance of a value or bigger in a sorted array
   - `1 1 2 2 3 4 5 5 5 6 6 6`
