@@ -7,14 +7,14 @@
 - target = 5
 - lower_bound() :
   - to find the first occurance of a value or bigger in a sorted array
-  - 1 1 2 2 3 4 5 5 5 6 6 6
-  - f f f f t t t t t t t t
+  - `1 1 2 2 3 4 5 5 5 6 6 6`
+  - `f f f f t t t t t t t t`
   - ```if (mid >= target)```
   - preserve the answer and search for a better one
 - upper_bound() :
   - to find the first occurance of a value that is bigger than the target in a sorted array
-  - 1 1 2 2 3 4 5 5 5 6 6 6
-  - f f f f t t t t t t t t
+  - `1 1 2 2 3 4 5 5 5 6 6 6`
+  - `f f f f t t t t t t t t`
   - ```if (mid >= target)```
   - preserve the answer and search for a better one
 - [Cow Problem](https://codeforces.com/group/c3FDl9EUi9/contest/264941/problem/B)
