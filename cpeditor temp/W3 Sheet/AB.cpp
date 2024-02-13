@@ -1,3 +1,12 @@
+// Problem: AB - Burglar and Matches
+// Contest: Virtual Judge - Week #3
+// URL: https://vjudge.net/contest/609587#problem/AB
+// Memory Limit: 64 MB
+// Time Limit: 500 ms
+// By: Sakura Yamauchi
+// 
+// Powered by CP Editor (https://cpeditor.org)
+
 #include<bits/stdc++.h>
 using namespace std;
 #define forn(i,a,b) for (int i=(int)(a);i<(int)(b);i++)
@@ -15,7 +24,12 @@ using namespace std;
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-    
+    ll n, m, ttt, tttt; cin >> n >> m;
+    vector<pair<int,int>> v;
+    while(m--){
+    	cin >> ttt >> tttt;
+    	v.pb()
+    }
     
     // !Stop Here! */
     return 0;

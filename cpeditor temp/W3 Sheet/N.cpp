@@ -1,3 +1,12 @@
+// Problem: N - Books
+// Contest: Virtual Judge - Week #3
+// URL: https://vjudge.net/contest/609587#problem/N
+// Memory Limit: 256 MB
+// Time Limit: 2000 ms
+// By: Sakura Yamauchi
+// 
+// Powered by CP Editor (https://cpeditor.org)
+
 #include<bits/stdc++.h>
 using namespace std;
 #define forn(i,a,b) for (int i=(int)(a);i<(int)(b);i++)
@@ -7,7 +16,6 @@ using namespace std;
 #define ns cout << "NO";
 #define F first
 #define S second
-#define pb push_back
 #define ll long long
 #define ld long double
 #define llu long long unsigned
