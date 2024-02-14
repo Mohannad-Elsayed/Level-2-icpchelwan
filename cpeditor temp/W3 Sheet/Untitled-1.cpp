@@ -1,26 +1,33 @@
 #include<bits/stdc++.h>
 using namespace std;
 // #define int long long int
-#define FOR(i,a,b) for (int i=(int)(a);i<(int)(b);i++)
-#define ROF(i,a,b) for (int i=(int)(a);i>(int)(b);i--)
+#define forn(i,a,b) for (int i=(int)(a);i<(int)(b);i++)
+#define rofn(i,a,b) for (int i=(int)(a);i>(int)(b);i--)
 #define all(x) (x).begin(),(x).end()
 #define ys cout << "YES";
 #define ns cout << "NO";
+#define F first
+#define S second
+#define pb push_back
 #define ll long long
 #define ld long double
 #define llu long long unsigned
 #define si short int
-
-/*Calculate the distance*/
-ld dis(ld x1, ld y1, ld x2, ld y2){
-	return sqrt(((x1-x2) * (x1-x2)) + ((y1-y2) * (y1-y2)));
-}
-
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-    int a, b; cin >> a >> b;
-    cout << a+b;
+    int n, m; cin >> n >> m;
+    int arr[n]; forn(i, 0, n) cin >> arr[i];
+    ll sum = 0;
+    forn(i, 0, m){
+    	sum += arr[i];
+    }
+    ll mx = sum;
+    forn(i, m, n){
+    	sum += arr[i]; sum -= arr[i-m];
+    	mx = max(sum, mx);
+    }
+    cout << mx;
     // !Stop Here! */
     return 0;
 }
