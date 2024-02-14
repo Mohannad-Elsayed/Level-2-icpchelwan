@@ -21,18 +21,17 @@ using namespace std;
 #define ld long double
 #define llu long long unsigned
 #define si short int
-
+auto comp(string s1, string s2){
+	return s1+s2 < s2+s1;
+}
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
     int n, mxlen = INT_MIN; cin >> n;
     vector<string> v(n);
     for(auto &e : v) cin >> e;
-    sort(all(v));
-    for(auto s : v){
-    	cout << s << endl;
-    }
-    // sort(all(v), fun);
+    sort(all(v), comp);
+    for(auto s : v) cout << s;
     // !Stop Here! */
     return 0;
 }
