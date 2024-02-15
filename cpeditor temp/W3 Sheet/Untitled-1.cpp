@@ -16,18 +16,15 @@ using namespace std;
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-    int n, m; cin >> n >> m;
-    int arr[n]; forn(i, 0, n) cin >> arr[i];
-    ll sum = 0;
-    forn(i, 0, m){
-    	sum += arr[i];
+    int n; cin >> n;
+    ld l = 0, r = 1e10, m;
+    int ite = 64;
+    while(ite--){
+    	m = (l+r)/2;
+    	if (m*m<=n) l = m;
+    	else r = m;
     }
-    ll mx = sum;
-    forn(i, m, n){
-    	sum += arr[i]; sum -= arr[i-m];
-    	mx = max(sum, mx);
-    }
-    cout << mx;
+    cout << fixed << setprecision(20) << m;
     // !Stop Here! */
     return 0;
 }
