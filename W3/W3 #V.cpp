@@ -29,25 +29,45 @@ int tests(); int solve(){
     int n, m; cin >> n >> m;
     vector<int> v(n);
     forn(i, 0, n) cin >> v[i];
-    multiset<int> ste;
+	
+	/*
+	// BF solution
+	forn(i, 0, n-m+1){
+		int curr = INT_MAX;
+		multiset<int> sub;
+		forn(j, i, i+m){
+			sub.insert(v[j]);
+		}
+		forn(j, 0, n+1){
+			if (sub.find(j) == sub.end()){
+				curr = min(curr, j);
+				break;
+			}
+		}
+		res = min(res, curr);
+		if (!res) return (cout << 0), 0;
+	}
+    */
+    
+    map<int, int> mp;
     // calculate the mex for the first time
 	int res = INT_MAX, curr = 0;
 	forn(i, 0, m){
-		ste.insert(v[i]);
+		mp[v[i]]++;
 	}
     forn(i, 0, n+1){
-    	if (ste.find(i) == ste.end()){
+    	if (mp.find(i) == mp.end()){
     		curr = i; res = i;
     		break;
     	}
     }
-    // make a sliding window with length m to find the next mex, res;
+    if (!res) return (cout << 0), 0;
     forn(i, m, n){
-    	ste.insert(v[i]);
-    	if (v[i] == curr) curr++;
-    	ste.erase(ste.find(v[i-m]));
-    	if (ste.find(v[i-m]) == ste.end()) curr = min(v[i-m], curr);
-    	res = min(res, curr);
+    	if (v[i] == v[i-m]) continue;
+    	mp[v[i]]++;
+    	mp[v[i-m]]--;
+    	if (mp[v[i-m]] == 0) curr = min(v[i-m], curr);
+    	res = min(curr, res);
     }
     cout << res;
     // !Stop Here! */
