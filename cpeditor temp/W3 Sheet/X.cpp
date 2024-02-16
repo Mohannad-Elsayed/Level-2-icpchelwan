@@ -5,7 +5,7 @@
 // Time Limit: 1000 ms
 // By: Sakura Yamauchi
 // When: 2024-02-15 18:53:08
-// Topic: Two pointers
+// Topic: Two pointers, Variable-sized sliding window
 // 
 // Powered by CP Editor (https://cpeditor.org)
 
@@ -23,38 +23,38 @@ using namespace std;
 #define ld long double
 #define llu long long unsigned
 #define si short int
+int n, k, ansl = -1, ansr = -1; vector<int> v;
+bool validate(int m){
+	map<int, int> mp;
+	forn(i, 0, m) mp[v[i]]++;
+	if (mp.size() <= k){
+		ansl = 0; ansr = m-1;
+		return true;
+	}
+	forn(i, m, n){
+		mp[v[i]]++;
+		mp[v[i-m]]--;
+		if (mp[v[i-m]] == 0) mp.erase(v[i-m]);
+		if (mp.size() <= k){
+			ansl = i-m+1; ansr = i;
+			return true;
+		}
+	}
+	return false;
+}
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-    int n, k; cin >> n >> k;
-    vector<int> v(n);
-    for (auto& e : v) cin >> e;
-    if (k == 1) return (cout << 1 << ' ' << 1), 0;
-    int l = 0, r = 0, mx_len = -1;
-    pair<int, int> ans; map<int, int> mp;
-    while(l<=r && r<n){
-    	if (mp.size() <= k){
-    		mp[v[r]]++; r++;
-    		if (mp.size() == k){
-	    		if (r-l+1 > mx_len){
-	    			ans.F = l; ans.S = r;
-	    			mx_len = r-l+1;
-	    		}
-    		}
-    	}
-    	else {
-    		mp[v[l]]--;
-    		if (mp[v[l]] == 0) mp.erase(v[l]);
-    		l++;
-    		if (mp.size() == k){
-	    		if (r-l+1 > mx_len){
-	    			ans.F = l; ans.S = r;
-	    			mx_len = r-l+1;
-	    		}
-    		}
-    	}
+    cin >> n >> k;
+    v.resize(n);
+    for(auto& e : v) cin >> e;
+    int l = 1, r = n, m;
+    while(l<=r){
+    	m = (l+r)/2;
+    	if (validate(m)) l = m+1;
+    	else r = m-1;
     }
-    cout << ans.F+1 << ' ' << ans.S;
+    cout << ansl+1 << ' ' << ansr+1;
     // !Stop Here! */
     return 0;
 }
