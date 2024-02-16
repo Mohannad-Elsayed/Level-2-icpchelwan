@@ -23,36 +23,31 @@ using namespace std;
 #define ld long double
 #define llu long long unsigned
 #define si short int
-int n, k, ansl = -1, ansr = -1; vector<int> v;
-bool validate(int m){
-	map<int, int> mp;
-	forn(i, 0, m) mp[v[i]]++;
-	if (mp.size() <= k){
-		ansl = 0; ansr = m-1;
-		return true;
-	}
-	forn(i, m, n){
-		mp[v[i]]++;
-		mp[v[i-m]]--;
-		if (mp[v[i-m]] == 0) mp.erase(v[i-m]);
-		if (mp.size() <= k){
-			ansl = i-m+1; ansr = i;
-			return true;
-		}
-	}
-	return false;
-}
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
+    int n, k, ansl = -1, ansr = -1, mxlen = INT_MIN; 
     cin >> n >> k;
-    v.resize(n);
+    vector<int> v(n);
     for(auto& e : v) cin >> e;
-    int l = 1, r = n, m;
-    while(l<=r){
-    	m = (l+r)/2;
-    	if (validate(m)) l = m+1;
-    	else r = m-1;
+    map<int, int> mp;
+    int l = 0, r = 0;
+    while(r<n){
+    	if (mp.size() <= k){
+    		mp[v[r]]++;
+    		if (mp.size() <= k && r-l+1 > mxlen){
+			// cout << "# -> " << l << ' ' << r << endl;
+			// for(auto [x, y] : mp) cout << x << ' ' << y << endl; cout << endl;
+    			ansl = l; ansr = r;
+    			mxlen = r-l+1;
+    		}
+    		r++;
+    	}
+    	else{
+    		mp[v[l]]--;
+    		if (mp[v[l]] == 0) mp.erase(v[l]);
+    		l++;
+    	}
     }
     cout << ansl+1 << ' ' << ansr+1;
     // !Stop Here! */
