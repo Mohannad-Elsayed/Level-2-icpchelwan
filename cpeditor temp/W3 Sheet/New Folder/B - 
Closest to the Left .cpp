@@ -1,9 +1,11 @@
-// Problem: F - Sagheer and Nubian Market
-// Contest: Virtual Judge - Week #3
-// URL: https://vjudge.net/contest/609587#problem/F
-// Memory Limit: 256 MB
+// Problem: B. Closest to the Left
+// Contest: Codeforces - ITMO Academy: pilot course - Binary Search - Step 1
+// URL: https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/B
+// Memory Limit: 512 MB
 // Time Limit: 2000 ms
 // By: Sakura Yamauchi
+// When: 2024-02-16 21:10:53
+// Topic: 
 // 
 // Powered by CP Editor (https://cpeditor.org)
 
@@ -16,45 +18,32 @@ using namespace std;
 #define ns cout << "NO";
 #define F first
 #define S second
+#define pb push_back
 #define ll long long
 #define ld long double
 #define llu long long unsigned
 #define si short int
-map<int, int> mp;
-ll n, bud, tmp, price = 0, resprice = 0;
-bool ok(int m){
-	price = 0;
-	auto it = mp.begin();
-	forn(i, 0, m){
-		price += ((it -> F) + (m * (it -> S))); it++;
-		if (price > bud){
-			return (price = 0), false;
-		}
-	}
-	return (resprice = price), true;
-} 
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-    cin >> n >> bud;
-    forn(i, 1, n+1){
-    	cin >> tmp;
-    	mp[tmp] = i;
+    int n, q; cin >> n >> q;
+    int arr[n]; forn(i, 0, n) cin >> arr[i];
+    while(q--){
+    	int tmp; cin >> tmp;
+    	int l = -1, r = n, m; 
+    	while(r > l+1){
+    		m = (l+r)/2;
+    		if (arr[m] <= tmp) l = m;
+    		else r = m;
+    	}
+    	cout << l+1 << '\n';
     }
-    int l = 0, r = n, m, res = 0;
-    while(l<=r){
-    	m = (l+r)/2;
-    	if (ok(m)){
-    		res = m;
-    		l = m+1;
-    	} else r = m-1;
-    }
-    cout << res << ' ' << resprice;
+    
     // !Stop Here! */
     return 0;
 }
 int main(){
-    ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+    ios_base::sync_with_stdio(false);cin.tie(0);
     return solve(); // Comment this if problem has multiple tests
     return tests();
 }

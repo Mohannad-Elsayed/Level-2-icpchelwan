@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define forn(i,a,b) for (int i=(int)(a);i<(int)(b);i++)
+#define rofn(i,a,b) for (int i=(int)(a);i>(int)(b);i--)
+#define all(x) (x).begin(),(x).end()
+#define ys cout << "YES";
+#define ns cout << "NO";
+#define F first
+#define S second
+#define pb push_back
+#define ll long long
+#define ld long double
+#define llu long long unsigned
+#define si short int
+struct PairHash {
+    auto operator()(const pair< ll , ll > &p) const -> size_t {
+        return int(p.first * 1LL * p.second % 1000000007);
+    }
+};
+
+int tests(); int solve(){
+  //TODO tests()  solve() //
+    // !Start Here! */
+    unordered_map< pair< ll , ll > , ll , PairHash > freq;
+    // freq[{1000000202,23453747}] = 99393939393939;
+    // cout << freq[{1000000202,2345374}];
+    // cout << (long long int)pow(2,62);
+    for (long long i = 4611686018427387904, j = 1; i>0; i/=2, j*=2){
+    	freq[{i, j}] = 20;
+    }
+    for (auto [x,y] : freq) cout << x.F << ' ' << x.S << ' ' << y << '\n';
+    // !Stop Here! */
+    return 0;
+}
+int main(){
+    ios_base::sync_with_stdio(false);cin.tie(0);
+    return solve(); // Comment this if problem has multiple tests
+    return tests();
+}
+int tests(){int t; cin >> t;while(t--){solve();cout << '\n';}return 0;}

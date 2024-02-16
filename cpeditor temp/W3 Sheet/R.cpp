@@ -28,22 +28,33 @@ int tests(); int solve(){
     // !Start Here! */
     int n, cnt = 0; cin >>n; vector<int> v(n), ans;
     for(auto& e : v) cin >> e;
-    sort(all(v));
-    int mn = 1, mx = n-1;
-    forn(i, 1, n){
-    	if ((i%2))
-    	ans.pb(v[mx--]);
-    	else
-    	ans.pb(v[mn++]);
-    }
-    if(n>2) 
-    	ans.insert((ans.begin()+n-2), v[0]);
-    else ans.pb(v[0]);
-    forn(i, 1, n-1){
-    	if (ans[i] < ans[i-1] && ans[i] < ans[i+1]) ++cnt;
-    }
-    cout << cnt << '\n';
-    for(auto x : ans) cout << x << ' ';
+    if (n<3){
+    	cout << 0 << '\n';
+    	for (auto x : v) cout << x << ' ';
+    	return 0;
+    } 
+    sort(all(v), greater<>());
+    int l = 0, r = n-1;
+    int iter = 500;
+	while(iter--){
+		forn(i, 1, n-1){
+	    	// v[i-1], v[i], v[i+1]
+	    	int mn = min({v[i-1], v[i], v[i+1]});
+	    	if (mn == v[i-1]){
+	    		swap(v[i], v[i-1]);
+	    		// i++;
+	    	}
+	    	else if (mn == v[i+1]){
+	    		swap(v[i+1], v[i]);
+	    		// i++;
+	    	}
+	    }
+	}
+	forn(i, 1, n-1){
+		if (v[i] < v[i-1] && v[i] < v[i+1]) ++cnt;
+	}
+	cout << cnt << '\n';
+	for (auto x : v) cout << x << ' '; cout << '\n';
     // !Stop Here! */
     return 0;
 }
