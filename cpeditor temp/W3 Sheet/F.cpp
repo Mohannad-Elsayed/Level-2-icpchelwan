@@ -28,7 +28,7 @@ bool ok(int m){
 	forn(i, 0, m){
 		price += ((it -> F) + (m * (it -> S))); it++;
 		if (price > bud){
-			return (price = 0), false;
+			return false;
 		}
 	}
 	return (resprice = price), true;

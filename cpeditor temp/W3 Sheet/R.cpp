@@ -26,35 +26,23 @@ using namespace std;
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-    int n, cnt = 0; cin >>n; vector<int> v(n), ans;
-    for(auto& e : v) cin >> e;
-    if (n<3){
+    int n; cin >> n;
+    int arr[n]; forn(i, 0, n) cin >> arr[i];
+    sort(arr, arr+n);
+    if (n < 3){
     	cout << 0 << '\n';
-    	for (auto x : v) cout << x << ' ';
+    	forn(i, 0, n) cout << arr[i] << ' ';
     	return 0;
-    } 
-    sort(all(v), greater<>());
-    int l = 0, r = n-1;
-    int iter = 500;
-	while(iter--){
-		forn(i, 1, n-1){
-	    	// v[i-1], v[i], v[i+1]
-	    	int mn = min({v[i-1], v[i], v[i+1]});
-	    	if (mn == v[i-1]){
-	    		swap(v[i], v[i-1]);
-	    		// i++;
-	    	}
-	    	else if (mn == v[i+1]){
-	    		swap(v[i+1], v[i]);
-	    		// i++;
-	    	}
-	    }
-	}
-	forn(i, 1, n-1){
-		if (v[i] < v[i-1] && v[i] < v[i+1]) ++cnt;
-	}
-	cout << cnt << '\n';
-	for (auto x : v) cout << x << ' '; cout << '\n';
+    }
+    int l = 0, r = ((n+1)/2)-1, m, res = -1;
+    while(l<=r){
+    	m = (l+r)/2;
+    	if (arr[m] < arr[m+1]){
+    		res = m;
+    		l = m+1;
+    	} else r = m-1;
+    }
+    cout << res;
     // !Stop Here! */
     return 0;
 }

@@ -1,11 +1,11 @@
-// Problem: K - Megacity
+// Problem: S - New String
 // Contest: Virtual Judge - Week #3
-// URL: https://vjudge.net/contest/609587#problem/K
-// Memory Limit: 256 MB
-// Time Limit: 2000 ms
+// URL: https://vjudge.net/contest/609587#problem/S
+// Memory Limit: 64 MB
+// Time Limit: 1000 ms
 // By: Sakura Yamauchi
-// When: ٢٠٢٤-٠٢-١٥ ١٠:٤٦:٣٦
-// Topic: 
+// When: 2024-02-17 07:44:23
+// Topic: Compare function
 // 
 // Powered by CP Editor (https://cpeditor.org)
 
@@ -23,11 +23,38 @@ using namespace std;
 #define ld long double
 #define llu long long unsigned
 #define si short int
+map<char, int> mp;
+bool comp(string s1, string s2){
+	forn(i, 0, min(s1.length(), s2.length())){
+		if (mp[s1[i]] < mp[s2[i]]){
+			return true;
+		}
+		else if (mp[s1[i]] > mp[s2[i]]){
+			return false; 
+		}
+	}
+	return s1.length() < s2.length();
+}
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-    
-    
+    int n, k;
+    forn(i, 1, 27){
+    	char tmp; cin >> tmp;
+    	mp[tmp] = i;
+    }
+    // for (auto [x, y] : mp) cout << x << ' ' << y << endl;
+    cin >> n;
+    vector<string> v;
+    forn(i, 0, n){
+    	string ttmp; cin >> ttmp;
+    	v.pb(ttmp);
+    	
+    }
+    sort(all(v), comp);
+    // for (string sss : v) cout << sss << endl;
+    cin >> k;
+    cout << v[k-1];
     // !Stop Here! */
     return 0;
 }
