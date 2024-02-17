@@ -1,10 +1,12 @@
-// Problem: O - Meeting on the Line
-// Contest: Virtual Judge - Week #3
-// URL: https://vjudge.net/contest/609587#problem/O
+// Problem: B. Easy Geometry
+// Contest: Codeforces - USI-Team-Selection 2023-2024
+// URL: https://codeforces.com/gym/104886/problem/B
 // Memory Limit: 256 MB
 // Time Limit: 2000 ms
 // By: Sakura Yamauchi
-// Topic: Binary search, ternary search
+// When: 2024-02-17 14:27:56
+// Topic: Math, ternary search
+// 
 // Powered by CP Editor (https://cpeditor.org)
 
 #include<bits/stdc++.h>
@@ -16,44 +18,36 @@ using namespace std;
 #define ns cout << "NO";
 #define F first
 #define S second
+#define pb push_back
 #define ll long long
 #define ld long double
 #define llu long long unsigned
 #define si short int
-int n; 
-vector<pair<int, int>> v;
-ld validate(ld m){
-	ld res = 0;
-	for (auto [x, y] : v){
-		res = max((fabs(x-m) + y), res);
-	}
-	return res;
+
+ld dis(ld x1, ld y1, ld x2, ld y2, ld m){
+	return sqrtl((fabs(x1-m)) * (fabs(x1-m)) + y1 * y1) + sqrt((fabs(x2-m)) * (fabs(x2-m)) + y2 * y2);
 }
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-    cin >> n;
-    v.resize(n);
-    forn(i, 0, n) cin >> v[i].F;
-    forn(i, 0, n) cin >> v[i].S;
-    sort(all(v));
-
-    ld l = v[0].F, r = v[n-1].F, m, res = r-l+v[n-1].S, ans = -1;
-    int iterations = 350;
-    forn(i, 0, iterations){
+    ld x1, y1, x2, y2;
+	cin >> x1 >> y1 >> x2 >> y2;
+    int iters = 800;
+    ld l = -1e9, r = 1e9, m, ans;
+    while(iters--){
     	m = (l+r)/2;
-    	if (validate(m) < validate(m+1e-6)){
-    		ans = m; 
+    	// cout << fixed << setprecision(2) << m << ' ' << dis(x1, y1, x2, y2, m) << '\n';
+    	if (dis(x1, y1, x2, y2, m) < dis(x1, y1, x2, y2, m+1e-6)){
+    		ans = dis(x1, y1, x2, y2, m);
     		r = m;
     	} else l = m;
     }
-    cout << fixed << setprecision(6) << ans;
-
-    // !Stop Here! */
+    cout << fixed << setprecision (10) << ans;
+    // // !Stop Here! */
     return 0;
 }
 int main(){
-    ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+    ios_base::sync_with_stdio(false);cin.tie(0);
     // return solve(); // Comment this if problem has multiple tests
     return tests();
 }

@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #define int long long int
 #define forn(i,a,b) for (int i=(int)(a);i<(int)(b);i++)
 #define rofn(i,a,b) for (int i=(int)(a);i>(int)(b);i--)
 #define all(x) (x).begin(),(x).end()

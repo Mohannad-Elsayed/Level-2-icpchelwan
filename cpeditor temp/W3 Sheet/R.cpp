@@ -23,26 +23,47 @@ using namespace std;
 #define ld long double
 #define llu long long unsigned
 #define si short int
+int n; 
+vector<int> arr;
+bool ok(int m){
+	int cnt = 0;
+	forn(i, m+1, n){
+		if (arr[i] > arr[m]){
+			cnt++;
+		}
+	}
+	return cnt > m+1;
+}
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-    int n; cin >> n;
-    int arr[n]; forn(i, 0, n) cin >> arr[i];
-    sort(arr, arr+n);
+    cin >> n; 
+    arr.resize(n);
+    forn(i, 0, n) cin >> arr[i];
+    sort(all(arr));
     if (n < 3){
     	cout << 0 << '\n';
     	forn(i, 0, n) cout << arr[i] << ' ';
     	return 0;
     }
-    int l = 0, r = ((n+1)/2)-1, m, res = -1;
+    int l = 0, r = n, m, res = -1;
     while(l<=r){
     	m = (l+r)/2;
-    	if (arr[m] < arr[m+1]){
+    	if (ok(m)){
     		res = m;
     		l = m+1;
     	} else r = m-1;
     }
-    cout << res;
+    cout << res+1 << endl; // this is the number of 
+    if (res+1 == 0){
+    	for(int x : arr) cout << x << ' ';
+    }
+    else{
+	    n--;
+	    while(res){
+	    	cout << arr[n--] << ' ' << arr[res--] << ' ';
+	    }	
+    }
     // !Stop Here! */
     return 0;
 }
