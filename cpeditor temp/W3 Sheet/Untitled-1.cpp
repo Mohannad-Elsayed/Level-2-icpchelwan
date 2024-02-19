@@ -12,24 +12,36 @@ using namespace std;
 #define ld long double
 #define llu long long unsigned
 #define si short int
+vector<int> v(100000, true);
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-    int n; cin >> n; int pfx = 0, arr[n];
-    forn(i, 0, n){
-        cin >> arr[i];
-        pfx += arr[i];
-        arr[i] = pfx;
+    
+    int cnt = 1;
+    int n, mul = 1; cin >> n; 
+    for(;mul<=n;mul++){
+	    for(int i = 1; i<=n; i+=2){
+	    	if (mul*i > n) break;
+	    	if (v[mul*i]){cout << mul * i << " (" << cnt++<<')' << "  "; }
+	    	v[mul*i] = false;
+	    }
+	    cout << '\n';
+    	
     }
-    for (int x : arr) cout << x << ' ';
-    sort(arr, arr+n);
-    forn(i, 1, n){
-        if (arr[i] == arr[i-1]){
-            cout << "yes";
-            return 0;
-        }
-    }
-    cout << "no";
+    
+    // int n, tmp; cin >> n;
+    // int x = 0;
+    // int arr[n];
+    // set<int> ste;
+    // forn(i, 0, n){
+    	// cin >> arr[i];
+    // }
+    // sort(arr, arr+n);
+    // forn(i, 0, n){
+    	// // cout << (x^arr[i]) << '\n';
+    	// x ^= arr[i];
+    	// ste.insert(x);
+    // }
     // !Stop Here! */
     return 0;
 }
