@@ -25,4 +25,4 @@ int main(){
     return solve(); // Comment this if problem has multiple tests
     return tests();
 }
-int tests(){int t; cin >> t;while(t--){solve();cout << "\n\0"[(t==0)];}return 0;}
+int tests(){int t; cin >> t;while(t--){solve();cout << '\n';}return 0;}
