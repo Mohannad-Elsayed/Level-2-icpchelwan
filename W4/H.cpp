@@ -5,7 +5,7 @@
 // Time Limit: 3000 ms
 // By: Sakura Yamauchi
 // When: 2024-02-19 15:39:18
-// Topic: 
+// Topic: Divisors
 // 
 // Powered by CP Editor (https://cpeditor.org)
 
@@ -28,7 +28,8 @@ int tests(); int solve(){
     // !Start Here! */
     ll n, sum = 1;
     cin >> n;
-    for (ll i = 2; i*i<=n; ++i){
+    if (n == 1) return (cout << 0), 0;
+    for (ll i = 2; i<=n/2; ++i){
     	if (!(n%i)){
     		sum += (i+n/i);
     	}
