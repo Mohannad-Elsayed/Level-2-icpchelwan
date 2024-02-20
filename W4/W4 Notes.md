@@ -12,5 +12,12 @@
 - To check divisibility: get the prime factors of each number, divide and cancel each common factor:
 	- if the dividend has more factors than the divisor: `true`
 - Raising some number $n$ to a power $k$ is the same as multiplying it's prime factors by $k$. Make sense right?
+- Number of divisors of a given number is $\prod_{k=1}^n p_i + 1$  where $p_i$ is the power of each prime factor in the factorization of the given number, and $n$ is the number of prime factors. More formally, we the product of all prime factors' powers + 1 for each power.
 ## GCD:
+- gcd is the intersection of prime factorization of 2 numbers. 
+- By other words, choosing the min power for each factor in both factorization.
 - 
+
+## LCM:
+- $lcm(a,b)$  = $\frac{ab}{gcd(a,b)}$
+- Choosing the max power for each factor in both factorization.
