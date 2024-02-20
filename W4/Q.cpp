@@ -27,26 +27,30 @@ int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
     ll n;
-    while(true){
-    	cin >> n;
-    	if (!n) break;
-    	map<ll, ll> mp;
-    	while(!(n%2)){
-    		n/=2;
-    		mp[2]++;
-    	}
-    	for (ll i = 3; i*i<=n; i+=2){
-    		while(!(n%i)){
-    			mp[i]++;
-    			n /= i;
-    		}
-    	}
-    	if (n>1) mp[n]++;
-    	auto itend = mp.end(); itend--;
-    	for (auto it = mp.begin(); it != mp.end(); ++it) 
-    		cout << (*it).F << '^' << (*it).S << " \0"[(it == itend)]; cout << '\n';
-    }
-    
+   	while(true){
+   		cin >> n;
+   		if (!n) break;
+   		map<ll, ll> p;
+   		while(!(n%2)){
+   			n /= 2;
+   			if (!p.count(2)) p[2] = 1;
+   			else p[2]++;
+   		}
+   		for (ll i = 3; i*i<=n; i+=2){
+   			while(!(n%i)){
+   				n /= i;
+   				if (!p.count(i)) p[i] = 1;
+   				else p[i]++;
+   			}
+   		}
+   		if (n != 1) p[n] = 1;
+   		auto ee = p.end(); ee--;
+   		for (auto it = p.begin(); it != p.end(); ++it)
+   			cout << it -> F << '^' << it -> S << " \n"[(it == ee)];
+   		
+   		
+   		// for (auto [x, y] : p) cout << x << '^' << y << ' '; cout << '\n';
+   	}
     // !Stop Here! */
     return 0;
 }
