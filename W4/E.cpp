@@ -23,26 +23,24 @@ using namespace std;
 #define ld long double
 #define llu long long unsigned
 #define si short int
+bool isprime(ll n){
+	if (n < 2) return false;
+	if (n == 2 || n == 3) return true;
+	for (ll i = 2; i*i<=n; ++i){
+		if (!(n%i)) return false;
+	}
+	return true;
+}
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-    ll n, cnt; cin >> n;
+    ll n; cin >> n;
     bool yess = false;
-    if (n>1e5){
-	    double sq = sqrt(n);
-	    if (fabs((ll)(((ll)sq) * ((ll)sq)) -  n) <= 1e-6) yess = true;
-	    if (n == 1) yess = false;
-	}
-	else{
-		cnt = 0;
-    for (ll i = 1; i*i<=n; ++i){
-    	if (!(n%i)){
-	    		if (n/i == i) ++cnt;
-	    		else cnt+=2;
-    		}
-    	}
-	}
-	if (cnt == 3) yess = true;
+    double sq = sqrt(n);
+    if (fabs((ll)(((ll)sq) * ((ll)sq)) -  n) <= 1e-6 && isprime((ll)sq)) yess = true;
+    if (n == 1) yess = false;
+    // cout << isprime((ll)sq);
+    // cout << n <<  "   ";
     yess ? cout << "YES" : cout << "NO";
     // !Stop Here! */
     return 0;
