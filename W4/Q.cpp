@@ -33,14 +33,12 @@ int tests(); int solve(){
    		map<ll, ll> p;
    		while(!(n%2)){
    			n /= 2;
-   			if (!p.count(2)) p[2] = 1;
-   			else p[2]++;
+   			p[2]++;
    		}
    		for (ll i = 3; i*i<=n; i+=2){
    			while(!(n%i)){
    				n /= i;
-   				if (!p.count(i)) p[i] = 1;
-   				else p[i]++;
+   				p[i]++;
    			}
    		}
    		if (n != 1) p[n] = 1;
