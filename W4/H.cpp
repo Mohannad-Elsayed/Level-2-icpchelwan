@@ -23,18 +23,27 @@ using namespace std;
 #define ld long double
 #define llu long long unsigned
 #define si short int
+// vector<ll> v(5*1e5+10);
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-    ll n, sum = 1;
-    cin >> n;
-    if (n == 1) return (cout << 0), 0;
-    for (ll i = 2; i<=n/2; ++i){
-    	if (!(n%i)){
-    		sum += (i+n/i);
-    	}
-    }
-    cout << sum;
+	// forn(i, 2, 500010){
+		ll n; cin >> n;
+		ll sum = 1;
+		for (ll j = 2; j * j <= n; ++j){
+			if (!(n%j)){
+				sum += j;
+				if (j != n/j)
+					sum += n/j;
+			}
+		}
+		// v[i] = sum;
+	// }
+	// forn(i, 1, 5*1e5+10){
+		// cout << i << ' ' << v[i] << endl;
+	// }
+	if (n == 1) sum = 0;
+	cout << sum;
     // !Stop Here! */
     return 0;
 }
