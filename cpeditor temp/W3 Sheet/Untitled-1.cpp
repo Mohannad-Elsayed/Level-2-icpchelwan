@@ -12,36 +12,14 @@ using namespace std;
 #define ld long double
 #define llu long long unsigned
 #define si short int
-vector<int> v(100000, true);
+// Number of divisors
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
     
-    int cnt = 1;
-    int n, mul = 1; cin >> n; 
-    for(;mul<=n;mul++){
-	    for(int i = 1; i<=n; i+=2){
-	    	if (mul*i > n) break;
-	    	if (v[mul*i]){cout << mul * i << " (" << cnt++<<')' << "  "; }
-	    	v[mul*i] = false;
-	    }
-	    cout << '\n';
-    	
-    }
+    int n; cin >> n;
     
-    // int n, tmp; cin >> n;
-    // int x = 0;
-    // int arr[n];
-    // set<int> ste;
-    // forn(i, 0, n){
-    	// cin >> arr[i];
-    // }
-    // sort(arr, arr+n);
-    // forn(i, 0, n){
-    	// // cout << (x^arr[i]) << '\n';
-    	// x ^= arr[i];
-    	// ste.insert(x);
-    // }
+    
     // !Stop Here! */
     return 0;
 }
