@@ -21,8 +21,7 @@
 	- `while(b>0){`
 	`t = a%b;`
 	`a = b;`
-	`b = t;`
-	   `}`
+	`b = t;}`
 	   `return a;`
 	
 
