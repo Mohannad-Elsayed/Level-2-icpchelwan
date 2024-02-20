@@ -16,7 +16,15 @@
 ## GCD:
 - gcd is the intersection of prime factorization of 2 numbers. 
 - By other words, choosing the min power for each factor in both factorization.
-- 
+- If $r$ is the remainder of dividing  $a$ and $b$, $[r = \frac{a}{b}]$ then $gcd(a,b)$ = $gcd(b, r)$.
+- The previous fact allow us to conclude Euclidean Algorithm to find the gcd of 2 numbers:
+	- `while(b>0){`
+	`t = a%b;`
+	`a = b;`
+	`b = t;`
+	   `}`
+	   `return a;`
+	
 
 ## LCM:
 - $lcm(a,b)$  = $\frac{ab}{gcd(a,b)}$
