@@ -12,6 +12,11 @@ using namespace std;
 #define ld long double
 #define llu long long unsigned
 #define si short int
+ll power(int x, int y){
+	ll p = x;
+	while(--y) p *= x;
+	return p;
+}
 int gccd(int a, int b){ // a must be smaller than b
 	if (b == 0)
 		return max(-a, a);
@@ -26,7 +31,61 @@ int tests(); int solve(){
     // !Start Here! */
     int n, m;
     cin >> n >> m;
-    cout << "gcd: " << gccd(n, m) << "\nlcm: " << lccm(n, m);
+    // cout << "n = " << n << "   m = " << m << endl;
+    int tn = n, tm = m;
+    if (!m && !n) return (cout << "invalid!"), 0;
+    if (!n) return (cout << m), 0;
+    if (!m) return (cout << n), 0;
+    
+    // cout << "gcd: " << gccd(n, m) << "\nlcm: " << lccm(n, m);
+// second solution
+	// gcd (min power of common divisors)
+	map<int, int> pr1, pr2;
+	while(!(n%2)){
+		pr1[2]++;
+		n/=2;
+	}
+	
+	while(!(m%2)){
+		pr2[2]++;
+		m/=2;
+	}
+	
+	for (ll i = 3; i * i <= n; i+=2){
+		while(!(n%i)){
+			pr1[i]++;
+			n/=i;
+		}
+	}
+	if (n!=1) pr1[n]++;
+	
+	for (ll i = 3; i * i <= m; i+=2){
+		while(!(m%i)){
+			pr2[i]++;
+			m/=i;
+		}
+	}
+	if (m!=1) pr2[m]++;
+	
+	// for (auto [x, y] : pr1) cout << x  << ' ' << y << endl;
+	// cout << endl;
+	// for (auto [x, y] : pr2) cout << x  << ' ' << y << endl;
+	
+	ll _gcd_ = 1, _lcm_ = 1;
+	for(auto [x, y] : pr1){
+		if (pr2.count(x)){
+			// cout << x << ' ' << y << ' ' << pr2[x] << endl;
+			_gcd_ *= (power(x, min(y, pr2[x])));
+			_lcm_ *= (power(x, max(y, pr2[x])));
+			pr2.erase(x);
+		}
+		else _lcm_ *= (power(x, y));
+	}
+	for (auto [x, y] : pr2) _lcm_ *= (power(x, y));
+	cout << "Prime Factorization Method: \n";
+	cout << "GCD: " << _gcd_ << "  LCM: " << _lcm_ << endl;
+	cout << "\nEuclidean Method: \n";
+	cout << "GCD: " << gccd(tn, tm) << "  LCM: " << lccm(tn, tm) << endl;
     // !Stop Here! */
     return 0;
 }
