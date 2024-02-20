@@ -12,14 +12,35 @@ using namespace std;
 #define ld long double
 #define llu long long unsigned
 #define si short int
+const int MOD = 1000000007;
 // Number of divisors
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-    
     int n; cin >> n;
-    
-    
+    ll cnt = 1;
+    map<ll, ll> primes;
+    for (int j = 1; j<=n; ++j){
+    	int curr = j;
+    	while(!(curr%2)){
+    		primes[2]++;
+    		curr/=2;
+    	}
+    	for (int i = 3; i*i<=curr; i+=2){
+    		while(!(curr%i)){
+    			primes[i]++;
+    			curr/=i;
+    		}
+    	}
+    	if (curr!=1)primes[curr]++;
+    }
+    // for(auto [x, y] : primes) cout << x << ' ' << y << '\n';
+    for(auto [x, y] : primes){
+    	cnt *= (y+1);
+    	cnt %= MOD;
+    	// cout << cnt << '\n';
+    }
+    cout << cnt;
     // !Stop Here! */
     return 0;
 }
