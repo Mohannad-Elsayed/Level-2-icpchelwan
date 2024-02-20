@@ -17,14 +17,14 @@ ll power(int x, int y){
 	while(--y) p *= x;
 	return p;
 }
-int gccd(int a, int b){ // a must be smaller than b
+ll gccd(ll a, ll b){ // a must be smaller than b
 	if (b == 0)
 		return max(-a, a);
 	else {return gccd(b, a%b);} // here b is larger than a%b
 									// so it's the 'a' of the next iteration
 }
-int lccm(int a, int b){
-	return ((a*b)/gccd(a,b));
+ll lccm(ll a, ll b){
+	return (((ll)a*b)/gccd(a,b));
 }
 int tests(); int solve(){
   //TODO tests()  solve() //
