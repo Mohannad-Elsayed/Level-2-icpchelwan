@@ -28,10 +28,10 @@ int tests(); int solve(){
     // !Start Here! */
     ll n; cin >>n;
     ll p1 = 0, p2 = 0;
-    forn(i, 1, 2000){
-    	if (!n) break;
-    	if (i%2){
-    		if (!(n%2)){
+    bool i = true;
+    while(n){
+    	if (i){
+    		if (!(n%2) && (((n/2)%2) || n/2 == 2)){
     			p1 += n/2;
     			n/=2;
     		}
@@ -39,9 +39,10 @@ int tests(); int solve(){
     			p1++;
     			n--;
     		}
+    		i = false;
     	}
     	else{
-    		if (!(n%2)){
+    		if (!(n%2) && (((n/2)%2) || n/2 == 2)){
     			p2 += n/2;
     			n/=2;
     		}
@@ -49,9 +50,10 @@ int tests(); int solve(){
     			p2++;
     			n--;
     		}
+    		i = true;
     	}
     }
-    cout << p1;
+    cout << p1 << ' ' ;
     // !Stop Here! */
     return 0;
 }
