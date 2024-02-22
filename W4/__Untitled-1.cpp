@@ -12,28 +12,24 @@ using namespace std;
 #define ld long double
 #define llu long long unsigned
 #define si short int
-ll gccd(ll a, ll b){ // a must be smaller than b
-	if (b == 0)
-		return max(-a, a);
-	else {return gccd(b, a%b);} // here b is larger than a%b
-									// so it's the 'a' of the next iteration
-}
-ll lccm(ll a, ll b){
-	return ((a*b)/gccd(a,b));
+
+bool isp(int x){
+	forn(i, 2, x/2+1){
+		if (!(x%i)) return false;
+	}
+	return true;
 }
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-	// int n; cin >> n;
-	forn(n, 2, 30)	{forn(i, 1, n/2+1){
-			int x = gccd(i, n-i) + lccm(i, n-i);
-			if (x == n){
-				cout << "#" << n << endl;
-				cout << i << ' ' << n-i << ' ' << 
-					gccd(i, n-i) << ' ' <<  lccm(i, n-i) << "\n\n";
-					break;
-			}
-		}}
+    
+	forn(i, 1, 10000){
+		forn(j, 1, i){
+			if (isp(i*i-j*j))  cout << i << ' ' << j << ' ' << 
+			(i*i-j*j) << ' ' << isp(i*i-j*j) << '\n';
+		}
+	}
+	
     // !Stop Here! */
     return 0;
 }
