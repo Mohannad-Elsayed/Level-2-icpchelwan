@@ -1,30 +1,28 @@
-// Online C++ compiler to run C++ program online
-#include <iostream>
-#include <string>
+#include<bits/stdc++.h>
 using namespace std;
-int main() {
-	string str;
-   cin>>str;
-   int freq[100005]={0};
-   int max=0;
-   char result;
-   for(int i =0 ; str[i] != '\0';i++){
-      freq[str[i]]++;
-    //   cout<<"freq:"<<freq[str[i]]<<endl;
-      if(freq[str[i]]>max){
-          max=freq[str[i]];
-          result=str[i];
-        //   cout<<"it is greater in freq:"<<result<<endl;
-      }
-      else if (freq[str[i]]==max){
-          if(str[i] < result)
-          {
-              result=str[i];
-            //   cout<<"it is smaller in ascii:"<<result<<endl;
-          }
-      }
-     
-    }
-    cout<<result;
+#define forn(i,a,b) for (int i=(int)(a);i<(int)(b);i++)
+#define rofn(i,a,b) for (int i=(int)(a);i>(int)(b);i--)
+#define all(x) (x).begin(),(x).end()
+#define ys cout << "YES";
+#define ns cout << "NO";
+#define F first
+#define S second
+#define pb push_back
+#define ll long long
+#define ld long double
+#define llu long long unsigned
+#define si short int
+int tests(); int solve(){
+  //TODO tests()  solve() //
+    // !Start Here! */
+    int n; cin >> n;
+    while()
+    // !Stop Here! */
     return 0;
 }
+int main(){
+    ios_base::sync_with_stdio(false);cin.tie(0);
+    return solve(); // Comment this if problem has multiple tests
+    return tests();
+}
+int tests(){int t; cin >> t;while(t--){solve();cout << "\n "[(t==0)];}return 0;}
