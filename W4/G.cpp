@@ -37,14 +37,15 @@ int tests(); int solve(){
     // forn(i, 0, n+1) cout << pfx[i] << ' '; cout << "\n\n";
 	int l = 0, r = 1;
 	ll mx1 = pfx[n], mx2 = INT_MIN, mn = pfx.front(), mxtmp;
-	while(r<=n){
+	while(l<=n){
 		mxtmp = pfx[r] - pfx[l];
 		// cout << l << ' ' << r << ' ' << n << ' ' << mxtmp << ' ' << mx1 << endl;
 		if ((!(l == 0 && r == n)) && mxtmp >= mx1){
 			return (cout << "NO"), 0;
 		}
 		if (mn > pfx[r]) l = r;
-		r++;
+		if (r<n)r++;
+		else l++;
 	}
 	ys
     // !Stop Here! */
