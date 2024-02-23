@@ -26,17 +26,7 @@ using namespace std;
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-	ll n; cin >> n;
-	ll sum = 0;
-	set<int> d;
-	for (ll i = 1; i * i <= n; ++i){
-		if (!(n%i)){
-			if (i < n) d.insert(i);
-			if (n/i < n) d.insert(n/i);
-		}
-	}
-	for (auto x : d) sum += x;
-	cout << sum;
+	
     // !Stop Here! */
     return 0;
 }
