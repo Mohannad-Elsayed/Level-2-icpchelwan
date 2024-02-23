@@ -31,12 +31,14 @@ int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
     ll n, m; cin >> n >> m;
+    if (n > m) swap(n, m);
     ll _gcd_ = gccd(n, m);
-    int cnt = 1;
-    if (_gcd_ == 1) return (cout << cnt), 0;
-    for (ll i = 2; i*i<=_gcd_; ++i){
-    	if 
+    int cnt = 0;
+    for (int i = 1; i*i<=_gcd_; ++i){
+    	if (_gcd_%i == 0 && !(n%i) && !(m%i)) ++cnt;
+    	if (_gcd_/i != i && !(n%(_gcd_/i)) && !(m%(_gcd_/i))) ++cnt;
     }
+    cout << cnt;
     // !Stop Here! */
     return 0;
 }
