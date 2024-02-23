@@ -30,7 +30,7 @@ int tests(); int solve(){
 	ll sum = 0;
 	for (ll i = 1; i*i<=n; ++i){
 		if (!(n%i) && i<n) sum += i;
-		if (!(n%(n/i)) && (n/i)<n && ((n/i) != i)) sum += (n/i);
+			if (!(n%(n/i)) && (n/i)<n) sum += (n/i);
 	}
 	cout << sum;
     // !Stop Here! */
