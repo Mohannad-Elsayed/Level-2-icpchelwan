@@ -26,18 +26,15 @@ using namespace std;
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-		ll n; cin >> n;
-		ll sum = 1;
-	if (n == 1) return (cout << 0), 0;
-	for (ll j = 2; j * j <= n; ++j){
-		if (!(n%j)){
-			sum += j;
-			cout << j << ' ' << n/j << ''
-			if (j != n/j)
-				sum += n/j;
+	ll n; cin >> n;
+	ll sum = 0;
+	for (ll i = 1; i*i<=n; ++i){
+		if (!(n%i)){
+			sum += i;
+			if (n/i != i) sum += (n/i);
 		}
 	}
-	cout << sum;
+	cout << sum-n;
     // !Stop Here! */
     return 0;
 }
@@ -46,4 +43,4 @@ int main(){
     // return solve(); // Comment this if problem has multiple tests
     return tests();
 }
-int tests(){int t; cin >> t;while(t--){solve();cout << "\n\0"[(t==0)];}return 0;}
+int tests(){int t; cin >> t;while(t--){solve();cout << "\n "[(t==0)];}return 0;}
