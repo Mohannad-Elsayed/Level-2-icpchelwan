@@ -1,14 +1,3 @@
-// Problem: H - Divisor Summation
-// Contest: Virtual Judge - Week #4
-// URL: https://vjudge.net/contest/610907#problem/H
-// Memory Limit: 1536 MB
-// Time Limit: 3000 ms
-// By: Sakura Yamauchi
-// When: 2024-02-19 15:39:18
-// Topic: Divisors
-// 
-// Powered by CP Editor (https://cpeditor.org)
-
 #include<bits/stdc++.h>
 using namespace std;
 #define forn(i,a,b) for (int i=(int)(a);i<(int)(b);i++)
@@ -23,21 +12,25 @@ using namespace std;
 #define ld long double
 #define llu long long unsigned
 #define si short int
+ll gccd(ll a, ll b){ // a must be smaller than b
+	if (b == 0)
+		return max(-a, a);
+	else {return gccd(b, a%b);} // here b is larger than a%b
+									// so it's the 'a' of the next iteration
+}
+
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-		ll n; cin >> n;
-		ll sum = 1;
-	if (n == 1) return (cout << 0), 0;
-	for (ll j = 2; j * j <= n; ++j){
-		if (!(n%j)){
-			sum += j;
-			cout << j << ' ' << n/j << ''
-			if (j != n/j)
-				sum += n/j;
-		}
-	}
-	cout << sum;
+    int n; cin >> n;
+    int arr[n];
+    forn(i, 0, n) cin >> arr[i];
+    forn(i, 0, n){
+    	forn(j, i+1, n){
+    		cout << arr[i] << ' ' << arr[j] << ((gccd(arr[i], arr[j]) == 1) ? "  NO  " : "  YES  ")
+    						 << gccd(arr[i], arr[j]) << '\n';
+    	}
+    }
     // !Stop Here! */
     return 0;
 }
@@ -46,4 +39,4 @@ int main(){
     // return solve(); // Comment this if problem has multiple tests
     return tests();
 }
-int tests(){int t; cin >> t;while(t--){solve();cout << "\n\0"[(t==0)];}return 0;}
+int tests(){int t; cin >> t;while(t--){solve();cout << "\n "[(t==0)];}return 0;}

@@ -1,6 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define forn(i,a,b) for (int i=(int)(a);i<(int)(b);i++)
+#define ll long long
+#define ld long double
+#define llu long long unsigned
+#define si short int
+#define forn(i,a,b) for (ll i=(ll)(a);i<(ll)(b);i++)
 #define rofn(i,a,b) for (int i=(int)(a);i>(int)(b);i--)
 #define all(x) (x).begin(),(x).end()
 #define ys cout << "YES";
@@ -8,28 +12,26 @@ using namespace std;
 #define F first
 #define S second
 #define pb push_back
-#define ll long long
-#define ld long double
-#define llu long long unsigned
-#define si short int
 
 bool isp(int x){
-	forn(i, 2, x/2+1){
-		if (!(x%i)) return false;
+	for (ll i = 2; i*i<=x; ++i){
+		if (!(x%i)){
+			return false;
+		}
 	}
 	return true;
 }
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-    
-	forn(i, 1, 10000){
-		forn(j, 1, i){
-			if (isp(i*i-j*j))  cout << i << ' ' << j << ' ' << 
-			(i*i-j*j) << ' ' << isp(i*i-j*j) << '\n';
-		}
-	}
-	
+    int cnt = 0;
+    forn(i, 100000000, 10000000000){
+    	if (isp(i)){
+    		cout << i << '\n';
+    		++cnt;
+    		if (cnt == 100000) break;
+    	}
+    }
     // !Stop Here! */
     return 0;
 }

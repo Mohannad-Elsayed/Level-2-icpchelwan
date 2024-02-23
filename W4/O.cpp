@@ -1,11 +1,11 @@
-// Problem: H - Divisor Summation
+// Problem: O - Hossam and Trainees
 // Contest: Virtual Judge - Week #4
-// URL: https://vjudge.net/contest/610907#problem/H
-// Memory Limit: 1536 MB
+// URL: https://vjudge.net/contest/610907#problem/O
+// Memory Limit: 256 MB
 // Time Limit: 3000 ms
 // By: Sakura Yamauchi
-// When: 2024-02-19 15:39:18
-// Topic: Divisors
+// When: 2024-02-23 12:04:17
+// Topic: Divisibility
 // 
 // Powered by CP Editor (https://cpeditor.org)
 
@@ -26,18 +26,28 @@ using namespace std;
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-		ll n; cin >> n;
-		ll sum = 1;
-	if (n == 1) return (cout << 0), 0;
-	for (ll j = 2; j * j <= n; ++j){
-		if (!(n%j)){
-			sum += j;
-			cout << j << ' ' << n/j << ''
-			if (j != n/j)
-				sum += n/j;
-		}
-	}
-	cout << sum;
+
+    int n; cin >> n; set<int> d; int arr[n];
+    bool flag = true;
+    forn(i, 0, n){ 
+    	cin >> arr[i];
+    	if(arr[i] == 1)continue;
+    	// cout << arr[i] << endl;
+    	if (d.count(arr[i])) {flag = false;}
+    	d.insert(arr[i]);
+    	for (ll j = 2; j*j <= arr[i]; ++j){
+    		if (!(arr[i]%j)){
+    			if (d.count(j)) {flag = false;}
+    			d.insert(j);
+	    		if (j != arr[i]/j){
+	    			if (d.count(arr[i]/j)) {flag = false;}
+	    			d.insert(arr[i]/j);
+	    		}
+    		}
+    	}
+    }
+    if (flag) ns
+    else ys
     // !Stop Here! */
     return 0;
 }
@@ -46,4 +56,4 @@ int main(){
     // return solve(); // Comment this if problem has multiple tests
     return tests();
 }
-int tests(){int t; cin >> t;while(t--){solve();cout << "\n\0"[(t==0)];}return 0;}
+int tests(){int t; cin >> t;while(t--){solve();cout << "\n "[(t==0)];}return 0;}
