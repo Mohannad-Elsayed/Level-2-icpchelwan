@@ -1,11 +1,11 @@
-// Problem: H - Divisor Summation
+// Problem: M - Coprime
 // Contest: Virtual Judge - Week #4
-// URL: https://vjudge.net/contest/610907#problem/H
-// Memory Limit: 1536 MB
+// URL: https://vjudge.net/contest/610907#problem/M
+// Memory Limit: 256 MB
 // Time Limit: 3000 ms
 // By: Sakura Yamauchi
-// When: 2024-02-19 15:39:18
-// Topic: Divisors
+// When: 2024-02-21 01:11:55
+// Topic: 
 // 
 // Powered by CP Editor (https://cpeditor.org)
 
@@ -23,20 +23,39 @@ using namespace std;
 #define ld long double
 #define llu long long unsigned
 #define si short int
+int gccd(int a, int b){
+	if (!b) return a;
+	return gccd(b, a%b);
+}
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-		ll n; cin >> n;
-		ll sum = 1;
-	if (n == 1) return (cout << 0), 0;
-	for (ll j = 2; j * j <= n; ++j){
-		if (!(n%j)){
-			sum += j;
-			if (j != n/j)
-				sum += n/j;
-		}
-	}
-	cout << sum;
+    int n, tmp; cin >> n;
+    map<int, int, greater<int>> mp;
+    map<int, int> mmp;
+    set<int> ste;
+    int mx = -1;
+    vector<pair<int, int>> v;
+    forn(i,1,n+1){
+    	cin >> tmp;
+    	if (!ste.count(tmp)){
+    		mp[i] = tmp;
+    		mmp[tmp] = i;
+    	}
+    		
+    	else{
+    		mp.erase(mmp[tmp]);
+    		mp[i] = tmp;
+    	}
+    	ste.insert(tmp);
+    }
+    for (auto [x, y] : mp){
+    	v.pb({x, y});
+    }
+    for (auto [x, y] : v) cout << x << ' ' << y << endl;
+    forn(i, 0, n){
+    	
+    }
     // !Stop Here! */
     return 0;
 }
@@ -45,4 +64,4 @@ int main(){
     // return solve(); // Comment this if problem has multiple tests
     return tests();
 }
-int tests(){int t; cin >> t;while(t--){solve();cout << "\n\0"[(t==0)];}return 0;}
+int tests(){int t; cin >> t;while(t--){solve();cout << "\n "[(t==0)];}return 0;}

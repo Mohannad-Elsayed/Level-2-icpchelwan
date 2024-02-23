@@ -1,11 +1,11 @@
-// Problem: H - Divisor Summation
+// Problem: R - Number of common divisors
 // Contest: Virtual Judge - Week #4
-// URL: https://vjudge.net/contest/610907#problem/H
+// URL: https://vjudge.net/contest/610907#problem/R
 // Memory Limit: 1536 MB
-// Time Limit: 3000 ms
+// Time Limit: 600 ms
 // By: Sakura Yamauchi
-// When: 2024-02-19 15:39:18
-// Topic: Divisors
+// When: 2024-02-20 20:50:03
+// Topic: GCD, Prime Factorization
 // 
 // Powered by CP Editor (https://cpeditor.org)
 
@@ -23,20 +23,20 @@ using namespace std;
 #define ld long double
 #define llu long long unsigned
 #define si short int
+ll gccd(ll a, ll b){
+	if (!b) return a;
+	return gccd(b, a%b);
+}
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-		ll n; cin >> n;
-		ll sum = 1;
-	if (n == 1) return (cout << 0), 0;
-	for (ll j = 2; j * j <= n; ++j){
-		if (!(n%j)){
-			sum += j;
-			if (j != n/j)
-				sum += n/j;
-		}
-	}
-	cout << sum;
+    ll n, m; cin >> n >> m;
+    ll _gcd_ = gccd(n, m);
+    int cnt = 1;
+    if (_gcd_ == 1) return (cout << cnt), 0;
+    for (ll i = 2; i*i<=_gcd_; ++i){
+    	if 
+    }
     // !Stop Here! */
     return 0;
 }
@@ -45,4 +45,4 @@ int main(){
     // return solve(); // Comment this if problem has multiple tests
     return tests();
 }
-int tests(){int t; cin >> t;while(t--){solve();cout << "\n\0"[(t==0)];}return 0;}
+int tests(){int t; cin >> t;while(t--){solve();cout << "\n "[(t==0)];}return 0;}

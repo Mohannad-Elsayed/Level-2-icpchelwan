@@ -1,11 +1,11 @@
-// Problem: H - Divisor Summation
+// Problem: N - Interesting Function
 // Contest: Virtual Judge - Week #4
-// URL: https://vjudge.net/contest/610907#problem/H
-// Memory Limit: 1536 MB
-// Time Limit: 3000 ms
+// URL: https://vjudge.net/contest/610907#problem/N
+// Memory Limit: 256 MB
+// Time Limit: 2000 ms
 // By: Sakura Yamauchi
-// When: 2024-02-19 15:39:18
-// Topic: Divisors
+// When: 2024-02-22 15:38:08
+// Topic: Counting
 // 
 // Powered by CP Editor (https://cpeditor.org)
 
@@ -26,17 +26,11 @@ using namespace std;
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-		ll n; cin >> n;
-		ll sum = 1;
-	if (n == 1) return (cout << 0), 0;
-	for (ll j = 2; j * j <= n; ++j){
-		if (!(n%j)){
-			sum += j;
-			if (j != n/j)
-				sum += n/j;
-		}
-	}
-	cout << sum;
+    ll a, b, sum = 0; cin >> a >> b;
+    for (ll i = 1; i<1e17; i*=10){
+    	sum += (b/i-a/i);
+    }
+    cout << sum;
     // !Stop Here! */
     return 0;
 }
@@ -45,4 +39,4 @@ int main(){
     // return solve(); // Comment this if problem has multiple tests
     return tests();
 }
-int tests(){int t; cin >> t;while(t--){solve();cout << "\n\0"[(t==0)];}return 0;}
+int tests(){int t; cin >> t;while(t--){solve();cout << "\n "[(t==0)];}return 0;}
