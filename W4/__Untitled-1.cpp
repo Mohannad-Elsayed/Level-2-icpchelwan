@@ -24,14 +24,8 @@ bool isp(int x){
 int tests(); int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
-    int cnt = 0;
-    forn(i, 100000000, 10000000000){
-    	if (isp(i)){
-    		cout << i << '\n';
-    		++cnt;
-    		if (cnt == 100000) break;
-    	}
-    }
+    int n = 1;
+    cout << (printf("0"));
     // !Stop Here! */
     return 0;
 }
