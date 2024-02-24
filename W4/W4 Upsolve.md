@@ -107,6 +107,7 @@
 # S - Square Difference:
 - [`OG`](https://codeforces.com/problemset/problem/1033/B)
 - [`Tut`](https://codeforces.com/blog/entry/62287) 
+    - [Another Tut](https://www.geeksforgeeks.org/check-if-difference-of-areas-of-two-squares-is-prime/)
 - [```Sol```](https://github.com/Shah-Shishir/Codeforces-Solutions/blob/master/1033B.%20Square%20Difference.cpp)
 
 # T - Fedya and Maths:
