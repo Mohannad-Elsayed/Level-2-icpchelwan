@@ -12,7 +12,8 @@ using namespace std;
 #define ld long double
 #define llu long long unsigned
 #define si short int
-int tests(); int solve(){
+int test = 1;
+int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
     
@@ -22,7 +23,9 @@ int tests(); int solve(){
 }
 int main(){
     ios_base::sync_with_stdio(false);cin.tie(0);
-    return solve(); // Comment this if problem has multiple tests
-    return tests();
+    // cin >> test;
+    while(test--){
+      solve();
+      cout << '\n';
+    }
 }
-int tests(){int t; cin >> t;while(t--){solve();cout << "\n "[(t==0)];}return 0;}
