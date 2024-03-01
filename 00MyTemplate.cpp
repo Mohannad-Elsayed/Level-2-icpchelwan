@@ -3,6 +3,7 @@ using namespace std;
 #define forn(i,a,b) for (int i=(int)(a);i<(int)(b);i++)
 #define rofn(i,a,b) for (int i=(int)(a);i>(int)(b);i--)
 #define all(x) (x).begin(),(x).end()
+#define each(a, x) for (auto &a : x)
 #define ys cout << "YES";
 #define ns cout << "NO";
 #define F first
