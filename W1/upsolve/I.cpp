@@ -1,0 +1,45 @@
+// Problem: I - Kill `Em All
+// Contest: Virtual Judge - Week #1
+// URL: https://vjudge.net/contest/607207#problem/I
+// When: 2024-02-28 15:44:57
+
+#include<bits/stdc++.h>
+using namespace std;
+#define forn(i,a,b) for (int i=(int)(a);i<(int)(b);i++)
+#define rofn(i,a,b) for (int i=(int)(a);i>(int)(b);i--)
+#define all(x) (x).begin(),(x).end()
+#define ys cout << "YES";
+#define ns cout << "NO";
+#define F first
+#define S second
+#define pb push_back
+#define ll long long
+#define ld long double
+#define llu long long unsigned
+#define si short int
+int test = 1;
+int solve(){
+  //TODO tests()  solve() //
+    // !Start Here! */
+    int n, r, tmp, mul = 0, cnt = 0; cin >> n >> r;
+    set<int> ste;
+    forn(i, 0, n){
+    	cin >> tmp;
+    	ste.insert(tmp);
+    }
+    for (auto it = ste.rbegin(); it != ste.rend(); ++it, mul++){
+    	if (mul*r >= *it) continue;
+    	cnt++;
+    }
+    cout << cnt;
+    // !Stop Here! */
+    return 0;
+}
+int main(){
+    ios_base::sync_with_stdio(false);cin.tie(0);
+    cin >> test;
+    while(test--){
+      solve();
+      cout << '\n';
+    }
+}
