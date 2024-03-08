@@ -26,9 +26,9 @@ int main(){
     ios_base::sync_with_stdio(false);cin.tie(0);
     int test = 1;
     // cin >> test;
-    // cout << "# " << test << '\n';
-    while(test--){
-      solve();
-      cout << '\n';
+    forn(i, 1, test+1){
+    	// cout << "# " << i << '\n';
+      	solve();
+      	cout << '\n';
     }
 }
