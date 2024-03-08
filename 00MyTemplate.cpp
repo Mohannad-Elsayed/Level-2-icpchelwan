@@ -14,6 +14,7 @@ using namespace std;
 #define ld long double
 #define llu long long unsigned
 #define si short int
+#define mod 1000000007
 int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
