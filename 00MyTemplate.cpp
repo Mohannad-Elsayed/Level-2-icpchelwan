@@ -10,10 +10,10 @@ using namespace std;
 #define F first
 #define S second
 #define pb push_back
-#define ll long long
-#define ld long double
-#define llu long long unsigned
-#define si short int
+typedef long long ll;
+typedef long double ld;
+typedef unsigned long long llu;
+typedef short int si;
 #define MOD 1000000007
 int solve(){
   //TODO tests()  solve() //
