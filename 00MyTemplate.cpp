@@ -5,8 +5,8 @@ using namespace std;
 #define all(x) (x).begin(),(x).end()
 #define rall(x) (x).rbegin(),(x).rend()
 #define each(a, x) for (auto &a : x)
-#define ys cout << "YES"
-#define ns cout << "NO"
+#define ys cout << "YES";
+#define ns cout << "NO";
 #define F first
 #define S second
 #define pb push_back
