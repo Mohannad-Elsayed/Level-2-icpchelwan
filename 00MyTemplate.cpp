@@ -21,9 +21,9 @@ const llu MOD {1000000007};
 void solve(){
     
 }
-size_t main(){
+int32_t main(){
     ios_base::sync_with_stdio(0);cin.tie(0);
-    size_t t = 1;
+    int32_t t = 1;
     // cin >> test;
     forn(i, 1, t+1){
     	// cout << "# " << i << '\n';
