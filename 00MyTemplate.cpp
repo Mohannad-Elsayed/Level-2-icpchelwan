@@ -24,7 +24,7 @@ void solve(){
 int32_t main(){
     ios_base::sync_with_stdio(0);cin.tie(0);
     int32_t t = 1;
-    // cin >> test;
+    // cin >> t;
     forn(i, 1, t+1){
     	// cout << "# " << i << '\n';
       	solve();
