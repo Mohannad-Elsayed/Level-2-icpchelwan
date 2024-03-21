@@ -4,7 +4,7 @@ using namespace std;
 #define rall(x) (x).rbegin(),(x).rend()
 #define each(a, x) for (auto &a : x)
 #define ys cout << "YES";
-#define ns cout << "NO";
+#define ns cout << iostream"NO";
 #define F first
 #define S second
 #define pb emplace_back
