@@ -1,7 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define forn(i,a,b) for(int i=(int)(a);i<(int)(b);i++)
-#define rofn(i,a,b) for(int i=(int)(a);i>(int)(b);i--)
 #define all(x) (x).begin(),(x).end()
 #define rall(x) (x).rbegin(),(x).rend()
 #define each(a, x) for (auto &a : x)
@@ -17,6 +15,8 @@ typedef long long ll;
 typedef long double ld;
 typedef unsigned long long llu;
 typedef short int si;
+#define forn(i,a,b) for(llu i=(llu)(a);i<(llu)(b);i++)
+#define rofn(i,a,b) for(llu i=(llu)(a);i>(llu)(b);i--)
 const llu MOD {1000000007};
 void solve(){
     
