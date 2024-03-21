@@ -14,7 +14,7 @@ typedef long long ll;
 typedef long double ld;
 typedef unsigned long long llu;
 typedef short int si;
-#define MOD 1000000007
+const llu MOD {1000000007};
 int solve(){
   //TODO tests()  solve() //
     // !Start Here! */
