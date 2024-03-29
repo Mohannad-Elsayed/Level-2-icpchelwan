@@ -4,7 +4,7 @@ using namespace std;
 #define rall(x) (x).rbegin(),(x).rend()
 #define each(a, x) for (auto &a : x)
 #define ys cout << "YES";
-#define ns cout << iostream"NO";
+#define ns cout << "NO";
 #define F first
 #define S second
 #define pb emplace_back
@@ -17,8 +17,8 @@ typedef unsigned long long llu;
 typedef short int si;
 #define forn(i,a,b) for(llu i=(llu)(a);i<(llu)(b);i++)
 #define rofn(i,a,b) for(llu i=(llu)(a);i>(llu)(b);i--)
-const llu MOD {1000000007};
-void solve(){
+const ll MOD {1000000007};
+si solve(){
     
 }
 int32_t main(){
