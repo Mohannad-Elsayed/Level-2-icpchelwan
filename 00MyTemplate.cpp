@@ -15,8 +15,8 @@ typedef long long ll;
 typedef long double ld;
 typedef unsigned long long llu;
 typedef short int si;
-#define forn(i,a,b) for(llu i=(llu)(a);i<(llu)(b);i++)
-#define rofn(i,a,b) for(llu i=(llu)(a);i>(llu)(b);i--)
+#define forn(i,a,b) for(ll i=(ll)(a);i<(ll)(b);i++)
+#define rofn(i,a,b) for(ll i=(ll)(a);i>(ll)(b);i--)
 const ll MOD {1000000007};
 si solve(){
     
