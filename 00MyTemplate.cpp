@@ -15,6 +15,8 @@ typedef long long ll;
 typedef long double ld;
 typedef unsigned long long llu;
 typedef short int si;
+typedef vector<int> vi;
+typedef vector<vi> vii;
 #define forn(i,a,b) for(ll i=(ll)(a);i<(ll)(b);i++)
 #define rofn(i,a,b) for(ll i=(ll)(a);i>(ll)(b);i--)
 const ll MOD {1000000007};
